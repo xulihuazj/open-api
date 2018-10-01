@@ -1,0 +1,4 @@
+#应用-user-service
+server.port=8762
+  #服务链路配置
+spring.zipkin.base-url:http://localhost:9411
