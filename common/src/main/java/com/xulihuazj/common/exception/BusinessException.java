@@ -9,7 +9,7 @@ public class BusinessException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    private String errorCode = ResConstant.STATUSERRORCODE.toString();
+    private Integer errorCode = ResConstant.STATUSERRORCODE;
 
     private Integer httpStatus;
 
@@ -31,20 +31,20 @@ public class BusinessException extends RuntimeException {
         this.httpStatus = httpStatus;
     }
 
-    public String getErrorCode() {
+    public Integer getErrorCode() {
         return errorCode;
     }
 
     public void setErrorCode(Integer errorCode) {
         if (errorCode != null) {
-            this.errorCode = errorCode.toString();
+            this.errorCode = errorCode;
         }
     }
 
     public BusinessException(Integer errorCode, String message) {
         super(message);
         if (errorCode != null) {
-            this.errorCode = errorCode.toString();
+            this.errorCode = errorCode;
         }
     }
 
@@ -52,7 +52,7 @@ public class BusinessException extends RuntimeException {
         super(message);
         this.httpStatus = httpStatus;
         if (errorCode != null) {
-            this.errorCode = errorCode.toString();
+            this.errorCode = errorCode;
         }
     }
 

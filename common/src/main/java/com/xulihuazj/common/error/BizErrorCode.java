@@ -12,21 +12,23 @@ public enum BizErrorCode implements ErrorCode {
      * 3位系统码+2位业务码+3位异常码
      * 1.api默认系统码100
      */
-    REQUEST_PARAM_EMPTY_ERROR("10010000", "请求参数错误或缺失"),
+    REQUEST_PARAM_EMPTY_ERROR(10010000, "请求参数错误或缺失"),
 
+    TOKEN_IS_NOT_MATCH_USER(10010001,"TOKEN无效");
     ;
 
-    BizErrorCode(String code, String message) {
+
+    BizErrorCode(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    private String code;
+    private Integer code;
 
     private String message;
 
     @Override
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
